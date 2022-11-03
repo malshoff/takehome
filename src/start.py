@@ -72,9 +72,10 @@ def get_start_and_end_times(times):
     first_time = times[0]["time"]
     last_time = times[-1]["time"]
 
-    # if both times fit within the same hour, the end hour will be that hour + 1.
-    # otherwise, we want the graph to go from first_time to last_time, so that we
-    # will still have exactly 60 x-values, as required in the assignment details.
+    # if both times fit within the same hour,the end hour will be that hour+1.
+    # otherwise, we want the graph to go from first_time to last_time, so that
+    # we will still have exactly 60 x-values, as required in the assignment
+    # details.
 
     if first_time.hour == last_time.hour:
         x_axis_begin = first_time.replace(minute=0, second=0, microsecond=0)
