@@ -51,7 +51,7 @@ Start a celery worker
 
 ## Usage <a name = "usage"></a>
 
-```python start.py generate-issues```
+```python start.py generate-issues [COUNT]```
  will generate 100 jira issues
 
 ```python start.py graph``` 
