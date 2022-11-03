@@ -7,7 +7,6 @@ from dotenv import load_dotenv
 from jira import JIRA
 from pymongo import MongoClient
 from pymongo.collection import Collection
-from pymongo.results import InsertOneResult
 
 from mq.constants import Priority
 
@@ -61,8 +60,8 @@ def create_jira_issue(project_key: str) -> JiraIssue:
     Returns:
         JiraIssue: the issue that was created
     """
-    num = random.randrange(1, len(Priority) + 1)
-    priority = Priority(num).name
+    num: int = random.randrange(1, len(Priority) + 1)
+    priority: str = Priority(num).name
     issue = JiraIssue(
         {
             "project": {"key": project_key},

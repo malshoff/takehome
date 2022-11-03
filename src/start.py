@@ -92,7 +92,8 @@ def get_start_and_end_times(times):
 
 @app.command()
 def generate_tickets():
-    """Enqueue 100 jira tickets to be created. Celery and RabbitMQ must be running!"""
+    """Enqueue 100 jira tickets to be created. Celery and RabbitMQ must be
+    running!"""
 
     for i in range(100):
         create_jira_issue.apply_async(
