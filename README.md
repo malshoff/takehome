@@ -51,5 +51,8 @@ Start a celery worker
 
 ## Usage <a name = "usage"></a>
 
-python start.py generate-issues will generate 100 jira issues
-python start.py graph will point your browser to a histogram created using the generated jira issues
+```python start.py generate-issues```
+ will generate 100 jira issues
+
+```python start.py graph``` 
+will point your browser to a histogram created using the generated jira issues
