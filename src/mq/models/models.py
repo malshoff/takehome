@@ -11,7 +11,3 @@ class JiraIssue(TypedDict):
     priority: str
     issuetype: Dict[str, Any]
     description: str
-
-
-client: MongoClient = MongoClient()
-collection: Collection[JiraIssue] = client.takehome.jira
