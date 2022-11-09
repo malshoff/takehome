@@ -5,7 +5,7 @@ import pandas as pd
 import plotly.express as px
 import typer
 from pymongo import MongoClient
-
+from pymongo.cursor import Cursor
 from mq.tasks import create_jira_issue, insert_jira_issue_into_db
 
 app = typer.Typer()
@@ -35,7 +35,7 @@ def get_posts():
 
 @app.command()
 def graph():
-    """Shows graph of the last available hour of created jira issues"""
+    """Plot the latest hour of created jira issues"""
     posts = list(get_posts())
     df = pd.DataFrame(posts)
     # add count column
@@ -58,7 +58,7 @@ def graph():
     fig.show()
 
 
-def get_start_and_end_times(times):
+def get_start_and_end_times(times: list[Cursor]):
     """Returns the correct x axis boundaries given posts
 
     Args:
