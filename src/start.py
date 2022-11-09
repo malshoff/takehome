@@ -93,7 +93,7 @@ def get_start_and_end_times(times):
 
 @app.command()
 def generate_tickets(amount: int):
-    """Enqueue 100 jira tickets to be created. Celery and RabbitMQ must be
+    """Enqueue (amount) jira tickets to be created. Celery and RabbitMQ must be
     running!
 
 
