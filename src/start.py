@@ -109,5 +109,14 @@ def generate_tickets(amount: int):
         )
 
 
+@app.command()
+def generate_instantly():
+    """Instantly enqueue a Jira Task"""
+
+    create_jira_issue.apply_async(
+        ("TEST",), link=insert_jira_issue_into_db.s()
+    )
+
+
 if __name__ == "__main__":
     app()
